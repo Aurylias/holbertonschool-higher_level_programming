@@ -53,7 +53,7 @@ class CustomObject:
     def serialize(self, filename):
         """Serialize the instance of this objet as a pickle"""
         try:
-            with open(filename, wb) as pick:
+            with open(filename, "wb") as pick:
                 dump(self, pick)
         except Exception:
             return None
