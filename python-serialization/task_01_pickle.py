@@ -1,12 +1,12 @@
 """Module to serialize/deserialize a Python dictionary in JSON"""
-import pickle
+from pickle import dump, load
 
 class CustomObject:
     """Constructor"""
     def __init__(self, name="", age=0, is_student=False):
         self.name = name
         self.age = age
-        self.is_student = student
+        self.is_student = is_student
 
     @property
     def name(self):
@@ -53,7 +53,7 @@ class CustomObject:
         """Serialize the instance of this objet as a pickle"""
         try:
             with open(filename, wb) as pick:
-                pickle.dump(self, pick)
+                dump(self, pick)
         except Exception:
             return None
 
@@ -62,7 +62,7 @@ class CustomObject:
         """Deserialize a pickle file to load an instance of this class"""
         try:
             with open(filename, "rb") as pick:
-                instance = pickle.load(pick)
+                instance = load(pick)
             return instance
         except Exception:
             return None
