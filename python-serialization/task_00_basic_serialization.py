@@ -10,3 +10,4 @@ def load_and_deserialize(filename):
     """Deserialize a JSON Python dictionary"""
     with open(filename, "r") as jsonFile:
         data = json.load(jsonFile)
+    return data
