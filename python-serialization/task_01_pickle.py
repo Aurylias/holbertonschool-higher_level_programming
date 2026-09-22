@@ -42,6 +42,7 @@ class CustomObject:
         """Setter for is_student"""
         if not isinstance(is_student, bool):
             raise TypeError("is_student must be a bool")
+        self.__is_student
 
 
     def display(self):
