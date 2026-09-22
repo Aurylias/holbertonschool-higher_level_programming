@@ -1,4 +1,4 @@
-from json import dump, load
+import json
 
 """Module to serialize/deserialize a Python dictionary in JSON"""
 def serialize_and_save_to_file(data, filename):
