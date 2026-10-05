@@ -23,9 +23,7 @@ if __name__ == "__main__":
         (sys.argv[4],)
     )
     rows = cur.fetchall()
-
-    for row in rows:
-        print(row)
-
+    cities = [row[1] for row in rows]
+    print(', '.join(cities))
     cur.close()
     conn.close()
