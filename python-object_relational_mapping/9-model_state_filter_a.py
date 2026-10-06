@@ -19,4 +19,3 @@ if __name__ == "__main__":
 
         for data in with_a:
             print(f"{data.id}: {data.name}")
-   
