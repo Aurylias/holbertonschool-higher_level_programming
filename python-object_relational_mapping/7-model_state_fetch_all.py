@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 """Use the ORM to print all state from hbtn_0e_6_use"""
 import sys
 from sqlalchemy import create_engine
