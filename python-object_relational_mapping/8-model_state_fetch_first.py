@@ -13,6 +13,8 @@ if __name__ == "__main__":
     )
 
     with Session(engine) as session:
-        states = session.query(State).order_by(State.id).first()
-        for data in states:
-            print(f"{data.id}: {data.name}")
+        first = session.query(State).order_by(State.id).first()
+        if first is None:
+            print("Nothing")
+        else:
+            print(f"{first.id}: {first.name}")
