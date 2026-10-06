@@ -13,7 +13,9 @@ if __name__ == "__main__":
     )
 
     with Session(engine) as session:
-        new_state = State(name="Louisiana")
-        session.add(new_state)
-        session.commit()
-        print(new_state.id)
+        with_a = session.query(State).filter(
+            State.name == sys.argv[4]
+        ).first()
+
+        for data in with_a:
+            print(f"{data.id}: {data.name}")
