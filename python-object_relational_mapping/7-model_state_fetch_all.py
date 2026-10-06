@@ -6,10 +6,11 @@ from sqlalchemy import create_engine
 if __name__ == "__main__":
     use, pwd, db = sys.argv[1], sys.argv[2], sys.argv[3]
     engine = create_engine(
-        f"mysql+mysqldb://{user}:{pwd}@localhost:3306/{db}"
+        f"mysql+mysqldb://{user}:{pwd}@localhost:3306/{db}",
+        pool_pre_ping=True
     )
 
-    with Session() as session:
+    with Session(engine) as session:
         session.query(State).all
         for data in states:
             print(f"{s.id}: {s.name}")
