@@ -13,8 +13,10 @@ if __name__ == "__main__":
     )
 
     with Session(engine) as session:
-        with_a = session.query(State).filter(State.name.like("%a")) \
-                .order_by(State.id).all()
+        with_a = session.query(State).filter(
+            State.name.like("%a%")
+        ).order_by(State.id).all()
+
         for data in with_a:
             print(f"{data.id}: {data.name}")
         
