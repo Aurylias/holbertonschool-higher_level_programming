@@ -20,4 +20,4 @@ if __name__ == "__main__":
         if arg_query is None:
             print("Not found")
         else:
-            print(state.id)
+            print(arg_query.id)
