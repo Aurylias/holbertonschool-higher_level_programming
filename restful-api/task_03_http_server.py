@@ -30,12 +30,12 @@ class Handler(BaseHTTPRequestHandler):
             self._send(404, "text/plain", "404 Not Found: this end point does \
                                           not exist")
 
-    def run(port=8000):
-        server = HTTPServer(("", port), Handler)
-        try:
-            server.serve_forever()
-        except KeyboardInterrupt:
-            server.server_close()
+def run(port=8000):
+    server = HTTPServer(("", port), Handler)
+    try:
+        server.serve_forever()
+    except KeyboardInterrupt:
+        server.server_close()
 
 if __name__ == "__main__":
     run()
