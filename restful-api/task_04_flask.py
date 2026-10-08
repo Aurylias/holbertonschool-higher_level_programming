@@ -19,7 +19,7 @@ def status():
 @app.route("/users/<username>")
 def get_user(username):
     user = users.get(username)
-    if user is None:
+    if not user:
         return jsonify({"error": "User not found"}), 404
     return jsonify(user)
 
@@ -27,7 +27,7 @@ def get_user(username):
 def add_user():
     data = request.get_json(force=True, silent=True)
     if not isinstance(data, dict):
-        return jsonify({"error": "Invalid JSON"}), 404
+        return jsonify({"error": "Invalid JSON"}), 400
     username = data.get("username")
     if not username:
         return jsonify({"error": "Username is required"}), 400
