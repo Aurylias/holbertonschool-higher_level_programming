@@ -27,8 +27,7 @@ class Handler(BaseHTTPRequestHandler):
                    "description": "A simple API built with http.server"}
             self.send(200, "application/json", dumps(info))
         else:
-            self._send(404, "text/plain", "404 Not Found: this end point does \
-                                          not exist")
+            self._send(404, "text/plain", "Endpoint not found")
 
 def run(port=8000):
     server = HTTPServer(("", port), Handler)
