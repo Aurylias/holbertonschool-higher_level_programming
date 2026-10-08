@@ -19,7 +19,7 @@ def status():
 @app.route("/users/<username>")
 def get_user(username):
     user = users.get(username)
-    if not user:
+    if user is None:
         return jsonify({"error": "User not found"}), 404
     return jsonify(user)
 
