@@ -19,11 +19,11 @@ class Handler(http.server.BaseHTTPRequestHandler):
             self._send(200, "text/plain", "Hello, this is a simple API")
         elif self.path == "/data":
             data = {"name": "John", "age": 30, "city": "New York"}
-            self.send(200, "application/json", dumps(data))
+            self._send(200, "application/json", dumps(data))
         elif self.path == "/status":
-            self.send(200, "text/plain", "OK")
+            self._send(200, "text/plain", "OK")
         else:
-            self.send(404, "text/plain", "404 Not Found: this end point does \
+            self._send(404, "text/plain", "404 Not Found: this end point does \
                                           not exist")
 
     def run(port=8000):
