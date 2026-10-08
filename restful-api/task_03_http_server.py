@@ -16,12 +16,16 @@ class Handler(http.server.BaseHTTPRequestHandler):
 
     def do_GET(self):
         if self.path == "/":
-            self._send(200, "text/plain", "Hello, this is a simple API")
+            self._send(200, "text/plain", "Hello, this is a simple API!")
         elif self.path == "/data":
             data = {"name": "John", "age": 30, "city": "New York"}
             self._send(200, "application/json", dumps(data))
         elif self.path == "/status":
             self._send(200, "text/plain", "OK")
+        elif self.path == "/info":
+            info = {"version": "1.0",
+                   "description": "A simple API built with http.server"}
+            self.send(200, "application/json", dumps(info))
         else:
             self._send(404, "text/plain", "404 Not Found: this end point does \
                                           not exist")
