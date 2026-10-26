@@ -3,7 +3,7 @@ const values = [];
 
 if (process.argv.length >= 4) {
   for (let i = 2; i < process.argv.length; i++) {
-    values.push(process.argv[i]);
+    values.push(Number(process.argv[i]));
   }
 
   const result = [0, 0];
