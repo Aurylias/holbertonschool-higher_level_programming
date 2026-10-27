@@ -1,11 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
-
   const addItem = document.querySelector('#add_item');
   const removeItem = document.querySelector('#remove_item');
   const clearList = document.querySelector('#clear_list');
   const myList = document.querySelector('.my_list');
-
-  const header = document.querySelector('header');
 
   addItem.onclick = function () {
     const newLi = document.createElement('li');
@@ -16,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   removeItem.onclick = function () {
     const liList = document.querySelectorAll('li');
-    const liListLength = liList.length - 1
+    const liListLength = liList.length - 1;
     liList[liListLength].remove();
   };
 

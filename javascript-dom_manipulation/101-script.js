@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   btnTranslate.onclick = function () {
     const languague = document.querySelector('#language_code').value;
-    
+
     fetch(`https://hellosalut.stefanbohacek.com/?lang=${languague}`)
       .then((response) => response.json())
       .then((data) => {
